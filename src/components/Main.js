@@ -1,13 +1,19 @@
 import styled from 'styled-components'
+import Home from './Home'
+import Todo from './Todo'
+import Photos from './Photos'
 
-const MainStyled = styled.main`
-  margin: 0 1rem;
+const StyledMain = styled.main`
+  margin: 1rem;
 `;
 
-export default function Main({children}) {
+export default function Main({ activeCategory }) {
+
   return (
-    <MainStyled>
-      {children}
-    </MainStyled>
+    <StyledMain>
+      {(activeCategory === 'home') && <Home />}
+      {(activeCategory === 'todo') && <Todo />}
+      {(activeCategory === 'photos') && <Photos />}
+    </StyledMain>
   )
 }

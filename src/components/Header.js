@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 import NavCategories from './NavCategories';
 
-const HeaderStyled = styled.header`
+const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 `;
-const HeaderTitle = styled.h1`
+const StyledH1 = styled.h1`
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 1.5rem;
 `;
 
-export default function Header() {
+export default function Header({ onChangeActiveCategory }) {  
   return (
-    <HeaderStyled>
-      <HeaderTitle>React App</HeaderTitle>
-      <NavCategories/>
-    </HeaderStyled>
+    <StyledHeader>
+      <StyledH1>React App</StyledH1>
+      <NavCategories onChangeActiveCategory={onChangeActiveCategory} />
+    </StyledHeader>
   )
 }

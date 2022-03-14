@@ -10,15 +10,22 @@ const ButtonStyled = styled.button`
   border-radius: 7px;
   font-weight: bold;
   transition: background-color 0.2s, color 0.2s;
+
   &:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
   }
 `;
 
-export default function Button({children, link = '#'}) {
+export default function Button({ children, name, onChangeActiveCategory }) {
+
+  function handleClick(e) {
+    e.preventDefault()
+    onChangeActiveCategory(name)
+  }
+
   return (
-    <ButtonStyled href={link} >
+    <ButtonStyled onClick={handleClick}>
       {children}
     </ButtonStyled>
   )

@@ -1,4 +1,4 @@
-import { fetchDatas } from './helpers/functions';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -7,24 +7,29 @@ import Footer from './components/Footer';
 const PageContainer = styled.div`
   position: relative;
   min-height: 100vh;
+
+  background-color: #1a1a1a;
+  color: #f1f1f1;
 `;
 const ContentWrap = styled.div`
+  height: 100%;
   padding-bottom: 5rem;
 `;
 
 export default function App() {
+  const [activeCategory, setActiveCategory] = useState('home')
 
-  fetchDatas('https://jsonplaceholder.typicode.com/todos?_limit=10')
+  function handleChangeCategory(name) {
+    setActiveCategory(name)
+  }
   
   return (
     <PageContainer>
       <ContentWrap>
-        <Header/>
-        <Main>
-          <h2>Main</h2>
-        </Main>
+        <Header onChangeActiveCategory={handleChangeCategory} />
+        <Main activeCategory={activeCategory} />
       </ContentWrap>
-      <Footer/>
+      <Footer />
     </PageContainer>
   );
 }
