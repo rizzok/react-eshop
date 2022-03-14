@@ -9,6 +9,7 @@ const FooterStyled = styled.footer`
 
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 
   & h5 {
     font-weight: bold;

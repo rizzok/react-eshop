@@ -10,6 +10,8 @@ export default function NavCategories() {
   return (
     <Nav>
       <Button>Click me!</Button>
+      <Button>Click me!</Button>
+      <Button>Click me!</Button>
     </Nav>
   )
 }
