@@ -12,8 +12,8 @@ const ButtonStyled = styled.button`
   transition: background-color 0.2s, color 0.2s;
 
   &:hover {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
   }
 `;
 

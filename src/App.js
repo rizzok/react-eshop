@@ -8,8 +8,8 @@ const PageContainer = styled.div`
   position: relative;
   min-height: 100vh;
 
-  background-color: #1a1a1a;
-  color: #f1f1f1;
+  background-color: #f1f1f1;
+  color: #1a1a1a;
 `;
 const ContentWrap = styled.div`
   height: 100%;
@@ -17,7 +17,7 @@ const ContentWrap = styled.div`
 `;
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState('home')
+  const [activeCategory, setActiveCategory] = useState('todo')
 
   function handleChangeCategory(name) {
     setActiveCategory(name)
